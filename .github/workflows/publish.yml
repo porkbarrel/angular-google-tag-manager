@@ -20,6 +20,6 @@ jobs:
       - name: Install && Build
         run: npm install && npm run build:prod
       - name: Publish
-        run: npm publish --registry https://registry.lesfabricants.io
+        run: cd dist/angular-google-tag-manager && npm publish --registry https://registry.lesfabricants.io
         env:
           NODE_AUTH_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
