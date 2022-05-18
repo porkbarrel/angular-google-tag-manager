@@ -1,0 +1,23 @@
+on: 
+  push:
+    branches:
+      - master
+
+name: publish
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v1.4.4
+        with:
+          version: 14.11.0
+          registry-url: 'https://registry.lesfabricants.io'
+          scope: "@angular-google-tag-manager"
+      - name: Load repository
+        uses: actions/checkout@master
+      - name: Publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
