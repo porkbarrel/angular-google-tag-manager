@@ -6,6 +6,10 @@
     "type": "git",
     "url": "https://github.com/mzuccaroli/angular-google-tag-manager"
   },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
   "description": "A service library for integrate google tag manager in your angular project",
   "author": "marcozuccaroli@gmail.com",
   "contributors": [
