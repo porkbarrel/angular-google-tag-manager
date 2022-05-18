@@ -17,8 +17,8 @@ jobs:
           scope: '@angular-google-tag-manager'
       - name: Load repository
         uses: actions/checkout@master
-      - name: Build
-        run: npm run build:prod
+      - name: Install && Build
+        run: npm install && npm run build:prod
       - name: Publish
         run: npm publish --registry https://registry.lesfabricants.io
         env:
