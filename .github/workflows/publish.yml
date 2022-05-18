@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - master
+
+name: publish
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v1.4.4
+        with:
+          version: 16.10.0
+          registry-url: 'https://registry.lesfabricants.io'
+          scope: '@angular-google-tag-manager'
+      - name: Load repository
+        uses: actions/checkout@master
+      - name: Install && Build
+        run: npm install && npm run build:prod
+      - name: Publish
+        run: cd dist/angular-google-tag-manager && npm publish --registry https://registry.lesfabricants.io
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.REGISTRY_TOKEN }}

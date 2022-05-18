@@ -126,4 +126,11 @@ export class GoogleTagManagerService {
         .join('&')
     );
   }
+
+  public resetGtm(): void {
+    const dataLayer = this.getDataLayer();
+    dataLayer.push(function () {
+      this.reset();
+    });
+  }
 }
