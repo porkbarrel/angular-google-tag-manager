@@ -1,6 +1,6 @@
 {
   "name": "angular-google-tag-manager",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -64,5 +64,8 @@
     "protractor": "^7.0.0",
     "ts-node": "^10.4.0",
     "typescript": "~4.4.4"
-  }
+  },
+  "files": [
+    "dist/angular-google-tag-manager"
+  ]
 }
