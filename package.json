@@ -31,7 +31,8 @@
     "build:prod": "ng build --configuration=production",
     "test": "ng test",
     "lint": "ng lint",
-    "version": "ng version"
+    "version": "ng version",
+    "publish": "cd dist/angular-google-tag-manager && npm publish --registry https://registry.lesfabricants.io"
   },
   "private": false,
   "dependencies": {
